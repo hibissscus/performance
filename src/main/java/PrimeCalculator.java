@@ -1,3 +1,5 @@
+import com.google.common.base.Stopwatch;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -26,9 +28,12 @@ class BigIntegerIterator {
 public class PrimeCalculator {
 
     public static void main(String[] args) throws InterruptedException {
+        final Stopwatch stopwatch = Stopwatch.createStarted();
         for (Integer prime : getPrimes(Integer.parseInt(args[0]))) {
             System.out.print(prime + "\n");
         }
+        stopwatch.stop();
+        System.out.print("Duration: " + stopwatch);
     }
 
     private static List<Integer> getPrimes(int maxPrime) throws InterruptedException {
