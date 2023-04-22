@@ -37,4 +37,9 @@ public class PrimeCalculatorTest {
         testRun(100000, 5000);
     }
 
+    @Test(expected = OutOfMemoryError.class)
+    public void testWith1000000_out_of_memory() throws InterruptedException {
+        testRun(1000000, 1000000);
+    }
+
 }
