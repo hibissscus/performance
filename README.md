@@ -9,13 +9,13 @@ CPU call tree by thread for max prime number **100000**
 
 List of performance issues:
 =================================
-📉 Based on CPU hot spots - a lot of CPU time spent on the collection synchronization ![synchronized_list.png](profiler%2Fsynchronized_list.png)
+📉 **CPU high load**: a lot of CPU time spent on the collection synchronization based on CPU hot spots ![synchronized_list.png](profiler%2Fsynchronized_list.png)
 
-🧠💥 Out of memory due too many new instance of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](profiler%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](profiler%2Fout_of_memory.png)
+🧠💥 **Out of memory**: due too many new instance of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](profiler%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](profiler%2Fout_of_memory.png)
 
-🏋️‍♂️ Also, too ambition thread pool size, which can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](profiler%2Fambitious_thread_pool.png)
+🏋️‍♂️ **Too ambition thread pool size**: thread pool size can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](profiler%2Fambitious_thread_pool.png)
 
-🚨 Unnecessary use of ***Exception*** instead of the boolean as a return value
+🚨 **Unnecessary use of Exception**: would be better to use boolean as a return value instead of exceptions
 ![exception.png](profiler%2Fexception.png)
 ![thrown_exception.png](profiler%2Fthrown_exception.png)
 
