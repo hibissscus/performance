@@ -33,7 +33,7 @@ public class PrimeCalculator {
             System.out.print(prime + "\n");
         }
         stopwatch.stop();
-        System.out.print("Duration: " + stopwatch);
+        System.out.println("Duration: " + stopwatch);
     }
 
     private static List<Integer> getPrimes(int maxPrime) throws InterruptedException {

@@ -11,7 +11,7 @@ public class PrimeCalculatorOptimized {
             System.out.println(prime);
         }
         stopwatch.stop();
-        System.out.print("Duration: " + stopwatch);
+        System.out.println("Duration: " + stopwatch);
     }
 
     private static List<Integer> getPrimes(int maxPrime) {
