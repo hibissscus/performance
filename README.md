@@ -12,19 +12,27 @@ Memory for max prime number **100000**
 
 List of performance issues:
 =================================
-📉 **CPU high load**: a lot of CPU time spent on the collection synchronization based on CPU hot spots ![synchronized_list.png](profiler%2Fsynchronized_list.png)
+📉 **CPU high load**: a lot of CPU time spent on the collection synchronization based on CPU hot spots ![synchronized_list.png](readme%2Fsynchronized_list.png)
 
-🧠💥 **Out of memory**: due too many new instances of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](profiler%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](profiler%2Fout_of_memory.png)
+🧠💥 **Out of memory**: heap space issue due too many new instances of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](readme%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](readme%2Fout_of_memory.png)
 
-🏋️‍♂️ **Too ambition thread pool size**: thread pool size can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](profiler%2Fambitious_thread_pool.png)
+🏋️‍♂️ **Too ambition thread pool size**: thread pool size can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](readme%2Fambitious_thread_pool.png)
+
+🚫 **Unnecessary class BigIntegerIterator**: this class is redundant, but still if needed to use it some code can be refactored
+![big_integer_iterator.png](readme%2Fbig_integer_iterator.png)
 
 🚨 **Unnecessary use of Exception**: would be better to use boolean as a return value instead of exceptions
-![exception.png](profiler%2Fexception.png)
-![thrown_exception.png](profiler%2Fthrown_exception.png)
+![exception.png](readme%2Fexception.png)
+![thrown_exception.png](readme%2Fthrown_exception.png)
+
+🔡 **Excess concatenation**: instead of concatenations **System.out.println(prime)** can be used
+![main_println.png](readme%2Fmain_println.png)
+
+
 
 Optimized version of [PrimeCalculator](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimized.java)
 =================================
-![prime_calculator_optimized.png](profiler%2Fprime_calculator_optimized.png)
+![prime_calculator_optimized.png](readme%2Fprime_calculator_optimized.png)
 
 
 ### Authors
