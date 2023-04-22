@@ -11,7 +11,7 @@ List of performance issues:
 =================================
 📉 **CPU high load**: a lot of CPU time spent on the collection synchronization based on CPU hot spots ![synchronized_list.png](profiler%2Fsynchronized_list.png)
 
-🧠💥 **Out of memory**: due too many new instance of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](profiler%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](profiler%2Fout_of_memory.png)
+🧠💥 **Out of memory**: due too many new instances of ***BigIntegerIterator*** object creation in case of big prime number (ex. 1000000) ![big_integer_iterator_out_of_memory.png](profiler%2Fbig_integer_iterator_out_of_memory.png) ![out_of_memory.png](profiler%2Fout_of_memory.png)
 
 🏋️‍♂️ **Too ambition thread pool size**: thread pool size can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](profiler%2Fambitious_thread_pool.png)
 
