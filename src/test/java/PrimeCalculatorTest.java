@@ -11,15 +11,28 @@ import static org.junit.Assert.assertTrue;
  */
 public class PrimeCalculatorTest {
 
+    private static final long MEGABYTE = 1024L * 1024L;
+
+    public static long bytesToMegabytes(long bytes) {
+        return bytes / MEGABYTE;
+    }
+
+
     /**
      * @param maxPrime  inserted max prime number
      * @param threshold minimal execution time in milliseconds
      */
     private static void testRun(int maxPrime, int threshold) throws InterruptedException {
         final Stopwatch stopwatch = Stopwatch.createStarted();
+        // Get the Java runtime
+        Runtime runtime = Runtime.getRuntime();
+        long usedMemoryBefore = runtime.totalMemory() - runtime.freeMemory();
         PrimeCalculator.main(new String[]{String.valueOf(maxPrime)});
         stopwatch.stop();
         assertTrue("Execution time should be less then: " + threshold + "ms", stopwatch.elapsed().toMillis() < threshold);
+        // Calculate the used memory
+        long usedMemoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Memory increased:" + bytesToMegabytes(usedMemoryAfter-usedMemoryBefore));
     }
 
     @Test
