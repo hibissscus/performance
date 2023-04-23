@@ -53,8 +53,8 @@ Performance improvement after optimization:
 =================================
 🚀 **Execution time improvement**: significant improvement on time of the program execution (ex. 100000) ![comparison_optimized_call_tree.png](profiler/comparison_optimized_call_tree.png)
 
-🧠 **Heap size memory improvement**: less unnecessary object was created after optimization ![comparison_optimized_classes.png](profiler/comparison_optimized_classes.png)
-
+🧠 **Heap size memory improvement**: less unnecessary object was created after optimization ![comparison_optimized_classes.png](profiler/comparison_optimized_classes.png) 
+![comparison_memory.png](profiler/comparison_memory.png)
 ✅ **Less exceptions**: less unnecessary exceptions generated during execution ![comparison_optimized_exceptions.png](profiler/comparison_optimized_exceptions.png)
 
 ### Authors
