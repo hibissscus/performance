@@ -23,22 +23,22 @@ public class PrimeCalculatorTest {
     }
 
     @Test
-    public void testWith100() throws InterruptedException {
+    public void testWith_100() throws InterruptedException {
         testRun(100, 15);
     }
 
     @Test
-    public void testWith10000() throws InterruptedException {
+    public void testWith_10_000() throws InterruptedException {
         testRun(10000, 800);
     }
 
     @Test
-    public void testWith100000() throws InterruptedException {
+    public void testWith_100_000() throws InterruptedException {
         testRun(100000, 5000);
     }
 
     @Test(expected = OutOfMemoryError.class)
-    public void testWith1000000_out_of_memory() throws InterruptedException {
+    public void testWith_1_000_000_out_of_memory() throws InterruptedException {
         testRun(1000000, 1000000);
     }
 

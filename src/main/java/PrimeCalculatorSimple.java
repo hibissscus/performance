@@ -1,29 +1,29 @@
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-public class PrimeCalculatorOptimized {
+public class PrimeCalculatorSimple {
 
     public static void main(String[] args) {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         for (Integer prime : getPrimes(Integer.parseInt(args[0]))) {
-            System.out.print(prime + "\n");
+            System.out.println(prime);
         }
         stopwatch.stop();
         System.out.println("Duration: " + stopwatch);
     }
 
     private static List<Integer> getPrimes(int maxPrime) {
-        List<Integer> primeNumbers = Collections.synchronizedList(new ArrayList<>(maxPrime / 2));
-        IntStream.rangeClosed(2, maxPrime)
-                .parallel()
-                .filter(PrimeCalculatorOptimized::isPrime)
-                .forEach(primeNumbers::add);
-        primeNumbers = primeNumbers.stream().sorted().collect(Collectors.toList());
+        List<Integer> primeNumbers = Lists.newArrayList();
+        int startNum = 2;
+        while (startNum < maxPrime) {
+            if (isPrime(startNum)) {
+                primeNumbers.add(startNum);
+            }
+            startNum++;
+        }
+
         return primeNumbers;
     }
 
