@@ -23,8 +23,7 @@ public class PrimeCalculatorOptimized {
                 .parallel()
                 .filter(PrimeCalculatorOptimized::isPrime)
                 .forEach(primeNumbers::add);
-        primeNumbers = primeNumbers.stream().sorted().collect(Collectors.toList());
-        return primeNumbers;
+        return primeNumbers.stream().sorted().collect(Collectors.toList());
     }
 
     private static boolean isPrime(int candidate) {
