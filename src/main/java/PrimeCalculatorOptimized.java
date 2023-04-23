@@ -11,7 +11,7 @@ public class PrimeCalculatorOptimized {
     public static void main(String[] args) {
         final Stopwatch stopwatch = Stopwatch.createStarted();
         for (Integer prime : getPrimes(Integer.parseInt(args[0]))) {
-            System.out.print(prime + "\n");
+            System.out.println(prime);
         }
         stopwatch.stop();
         System.out.println("Duration: " + stopwatch);
