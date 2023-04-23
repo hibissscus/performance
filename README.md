@@ -40,13 +40,13 @@ Here are some potential improvements that could be made to the code:
 💻 **Use a more efficient algorithm for finding primes**: current implementation uses a simple trial division approach, which is slow for large values of maxPrime.
 ![efficient_algorithm.png](readme/efficient_algorithm.png)
 
-🤝 **Remove unnecessary synchronization**: [PrimeCalculatorSimple.java](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorSimple.java)
-
 🎯 **Use the IntStream instead of Stream**: since the BigIntegerIterator class is only used to generate a sequence of integers, to simplify the code by using the IntStream class instead of the Stream class. This can make the code more concise and easier to read. 
 ![int_stream.png](readme/int_stream.png)
 
 ✅ **Remove unnecessary Exception handling**: isPrime method throws an Exception when a non-prime number is found, but this is unnecessary since the method is only called in a try-catch block, and the caught exception is ignored. Instead of throwing an exception, the method could return a boolean value indicating whether the number is prime or not.
 ![boolean_instead_exceptiuon.png](readme/boolean_instead_exceptiuon.png)
+
+🤝 **Remove unnecessary synchronization**: [PrimeCalculatorSimple.java](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorSimple.java)
 
 🚀 **Full version of optimized class**: [PrimeCalculatorOptimized.java](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimized.java)
 ![prime_calculator_optimized.png](readme/prime_calculator_optimized.png)
