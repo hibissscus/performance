@@ -34,7 +34,6 @@ Code style refactoring:
 ![exception.png](readme/exception.png)
 ![thrown_exception.png](readme/thrown_exception.png)
 
-
 Optimized version of [PrimeCalculator](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimized.java)
 =================================
 Here are some potential improvements that could be made to the code:
