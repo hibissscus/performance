@@ -19,19 +19,20 @@ List of performance issues:
 
 🏋️‍♂️ **Too ambition thread pool size**: thread pool size can be too big in case of big prime number (ex. 1000000) ![ambitious_thread_pool.png](readme%2Fambitious_thread_pool.png)
 
-🚫 **Unnecessary class BigIntegerIterator**: this class is redundant, but still if needed to use it some code can be refactored
-![big_integer_iterator.png](readme%2Fbig_integer_iterator.png)
-
 💰 **Expensive operation**: inside **isPrime** method expensive operation ***subList*** is used inside the for-loop
 ![sub_list.png](readme%2Fsub_list.png)
-
-🚨 **Unnecessary use of Exception**: would be better to use boolean as a return value instead of exceptions
-![exception.png](readme%2Fexception.png)
-![thrown_exception.png](readme%2Fthrown_exception.png)
 
 🔡 **Excess concatenation**: instead of concatenations **System.out.println(prime)** can be used
 ![main_println.png](readme%2Fmain_println.png)
 
+Code style refactoring:
+=================================
+🚫 **Unnecessary class BigIntegerIterator**: this class is redundant, but still if needed to use it some code can be refactored
+![big_integer_iterator.png](readme%2Fbig_integer_iterator.png)
+
+🚨 **Unnecessary use of Exception**: would be better to use boolean as a return value instead of exceptions
+![exception.png](readme%2Fexception.png)
+![thrown_exception.png](readme%2Fthrown_exception.png)
 
 
 Optimized version of [PrimeCalculator](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimized.java)
