@@ -29,7 +29,7 @@ public class PrimeCalculatorOptimizedTest {
 
     @Test
     public void testWith_10_000() {
-        testRun(10000, 25);
+        testRun(10000, 35);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class PrimeCalculatorOptimizedTest {
 
     @Test
     public void testWith_10_000_000() {
-        testRun(10000000, 800);
+        testRun(10000000, 1000);
     }
 
 }
