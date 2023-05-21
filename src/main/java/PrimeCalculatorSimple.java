@@ -17,7 +17,7 @@ public class PrimeCalculatorSimple {
     private static List<Integer> getPrimes(int maxPrime) {
         List<Integer> primeNumbers = Lists.newArrayList();
         int startNum = 2;
-        while (startNum < maxPrime) {
+        while (startNum <= maxPrime) {
             if (isPrime(startNum)) {
                 primeNumbers.add(startNum);
             }

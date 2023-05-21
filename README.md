@@ -51,6 +51,9 @@ Here are some potential improvements that could be made to the code:
 🚀 **Full version of optimized class**: [PrimeCalculatorOptimized.java](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimized.java)
 ![prime_calculator_optimized.png](readme/prime_calculator_optimized.png)
 
+🚀 **Full version of optimized class**: [PrimeCalculatorOptimizedV2.java](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeCalculatorOptimizedV2.java)
+![prime_calculator_optimized_v2.png](readme/prime_calculator_optimized_v2.png)
+
 Performance improvement after optimization:
 =================================
 🚀 **Execution time improvement**: significant improvement on time of the program execution (ex. 100.000) ![comparison_optimized_call_tree.png](profiler/comparison_optimized_call_tree.png)
@@ -63,6 +66,18 @@ Performance improvement after optimization:
 
 ✅ **Fewer exceptions**: less unnecessary exceptions generated during execution ![comparison_optimized_exceptions.png](profiler/comparison_optimized_exceptions.png)
 
+Next version of optimization [Sieve of Eratosthenes](https://github.com/hibissscus/performance/blob/master/src/main/java/PrimeSieveOfEratosthenes.java):
+=================================
+🧺 **Sieve of Eratosthenes**: the algorithm works by iteratively marking the multiples of each prime number as composite, starting from the smallest prime (2) and continuing until the square of the current prime exceeds the given limit.
+
+- Create a list of consecutive integers from 2 to the given limit.
+- Let the current prime number be initialized as 2.
+- Mark all the multiples of 2 as composite (not prime).
+- Find the next prime number (the smallest number greater than the current prime that is not marked as composite).
+- Repeat steps 3 and 4 until the square of the current prime exceeds the given limit.
+- All the remaining unmarked numbers in the list are prime numbers.
+
+🚀 **Execution time improvement**: significant improvement on time of the program execution (ex. 100.000) ![100000_sieve_of_eratosthenes_algorithm.png](profiler/100000_sieve_of_eratosthenes_algorithm.png)
 ### Authors
 
 © 2023 [Sergei Stepanov](https://github.com/hibissscus) (implementation & enhancement)

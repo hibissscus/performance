@@ -6,11 +6,11 @@ import org.junit.Test;
  * macOS 12.1 mac-arm-64
  * OpenJDK 64-Bit Server VM; 17.0.2
  */
-public class PrimeCalculatorSimpleTest extends BaseTest {
+public class PrimeCalculatorOptimizedV2Test extends BaseTest {
 
     @Override
     void calculation(int maxPrime) {
-        PrimeCalculatorSimple.main(new String[]{String.valueOf(maxPrime)});
+        PrimeCalculatorOptimizedV2.main(new String[]{String.valueOf(maxPrime)});
     }
 
     @Test
@@ -20,22 +20,21 @@ public class PrimeCalculatorSimpleTest extends BaseTest {
 
     @Test
     public void testWith_10_000() {
-        testRun(10000, 7);
+        testRun(10000, 9);
     }
 
     @Test
     public void testWith_100_000() {
-        testRun(100000, 14);
+        testRun(100000, 19);
     }
 
     @Test
     public void testWith_1_000_000() {
-        testRun(1000000, 90);
+        testRun(1000000, 70);
     }
 
     @Test
     public void testWith_10_000_000() {
-        testRun(10000000, 1600);
+        testRun(10000000, 500);
     }
-
 }

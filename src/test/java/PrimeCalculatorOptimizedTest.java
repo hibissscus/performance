@@ -1,7 +1,4 @@
-import com.google.common.base.Stopwatch;
 import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Tested on:
@@ -9,42 +6,35 @@ import static org.junit.Assert.assertTrue;
  * macOS 12.1 mac-arm-64
  * OpenJDK 64-Bit Server VM; 17.0.2
  */
-public class PrimeCalculatorOptimizedTest {
+public class PrimeCalculatorOptimizedTest extends BaseTest {
 
-    /**
-     * @param maxPrime  inserted max prime number
-     * @param threshold minimal execution time in milliseconds
-     */
-    private static void testRun(int maxPrime, int threshold) {
-        final Stopwatch stopwatch = Stopwatch.createStarted();
+    @Override
+    void calculation(int maxPrime) {
         PrimeCalculatorOptimized.main(new String[]{String.valueOf(maxPrime)});
-        stopwatch.stop();
-        assertTrue("Minimal execution time should be less then: " + threshold + "ms", stopwatch.elapsed().toMillis() < threshold);
     }
 
     @Test
     public void testWith_100() {
-        testRun(100, 4);
+        testRun(100, 3);
     }
 
     @Test
     public void testWith_10_000() {
-        testRun(10000, 35);
+        testRun(10000, 11);
     }
 
     @Test
     public void testWith_100_000() {
-        testRun(100000, 45);
+        testRun(100000, 21);
     }
 
     @Test
     public void testWith_1_000_000() {
-        testRun(1000000, 165);
+        testRun(1000000, 80);
     }
 
     @Test
     public void testWith_10_000_000() {
-        testRun(10000000, 1000);
+        testRun(10000000, 580);
     }
-
 }

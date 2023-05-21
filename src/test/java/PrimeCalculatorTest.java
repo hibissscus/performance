@@ -1,7 +1,4 @@
-import com.google.common.base.Stopwatch;
 import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
 
 /**
  * Tested on:
@@ -9,36 +6,34 @@ import static org.junit.Assert.assertTrue;
  * macOS 12.1 mac-arm-64
  * OpenJDK 64-Bit Server VM; 17.0.2
  */
-public class PrimeCalculatorTest {
+public class PrimeCalculatorTest extends BaseTest {
 
-    /**
-     * @param maxPrime  inserted max prime number
-     * @param threshold minimal execution time in milliseconds
-     */
-    private static void testRun(int maxPrime, int threshold) throws InterruptedException {
-        final Stopwatch stopwatch = Stopwatch.createStarted();
-        PrimeCalculator.main(new String[]{String.valueOf(maxPrime)});
-        stopwatch.stop();
-        assertTrue("Minimal execution time should be less then: " + threshold + "ms", stopwatch.elapsed().toMillis() < threshold);
+    @Override
+    void calculation(int maxPrime) {
+        try {
+            PrimeCalculator.main(new String[]{String.valueOf(maxPrime)});
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
-    public void testWith_100() throws InterruptedException {
-        testRun(100, 15);
+    public void testWith_100() {
+        testRun(100, 12);
     }
 
     @Test
-    public void testWith_10_000() throws InterruptedException {
-        testRun(10000, 800);
+    public void testWith_10_000() {
+        testRun(10000, 640);
     }
 
     @Test
-    public void testWith_100_000() throws InterruptedException {
-        testRun(100000, 5000);
+    public void testWith_100_000() {
+        testRun(100000, 4250);
     }
 
     @Test(expected = OutOfMemoryError.class)
-    public void testWith_1_000_000_out_of_memory() throws InterruptedException {
+    public void testWith_1_000_000_out_of_memory() {
         testRun(1000000, 1000000);
     }
 
